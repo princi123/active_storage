@@ -1,0 +1,47 @@
+<% if user_signed_in? %>
+	<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+<% else %>
+	<li><%= link_to "Sign up now!",  new_user_registration_path%></li>
+<% end %>
+<h1>Welcome to Narinder's Music Company</h1>
+<div class="view_css">
+
+</div>
+
+<div class="view_css">
+	<h1>Upload your Audio</h1>
+	<%= form_with url: songs_path, method: :post, local: true  do |form| %>
+	  <%= form.text_area :name, placeholder: "Name please" %><br><br>
+	  <%= form.text_area :age, placeholder: "Age please" %><br><br>
+	  <%= form.text_area :phone_number, placeholder: "Phone number please" %><br><br>
+	  <%= form.file_field :song_file %><br>
+	  <%= form.submit %>
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+<style>
+	h1 {
+	  color: orange;
+	  font-family: verdana;
+	  font-size: 300%;
+	  text-align: center;
+	}
+
+	body {
+		 background-image: url("music5.jpg");
+	}
+
+	.view_css{
+		color: orange;
+		text-align: center;
+	}
+</style>
